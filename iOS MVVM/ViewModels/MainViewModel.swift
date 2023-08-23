@@ -9,6 +9,9 @@ import UIKit
 
 class MainViewModel {
     
+    var isLoading: Observable<Bool> = Observable(false)
+    var dataSource: TrendingMovieModel?
+    
     func numbersOfSection() -> Int {
         1
     }
@@ -18,12 +21,19 @@ class MainViewModel {
     }
     
     func getData(){
-        APICaller.getTrendingMovies { result in
+        if isLoading.value ?? true {
+            return
+        }
+        
+        isLoading.value = true
+        
+        APICaller.getTrendingMovies { [weak self] result in
+            self?.isLoading.value = false
+            
             switch result {
             case .success(let data):
                 print("Top Trending Counts : \(data.results.count)")
-//                print("1: \(data.totalResults)")
-//                print(data.results.first!)
+                self?.dataSource = data
             case .failure(let error):
                 print("Error at get data : \(error.localizedDescription)")
             }

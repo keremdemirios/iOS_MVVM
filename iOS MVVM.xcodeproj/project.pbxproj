@@ -18,6 +18,7 @@
 		41A6E01E2A769C6C008EF69B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6E01D2A769C6C008EF69B /* MainViewController.swift */; };
 		41A6E0232A769C72008EF69B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A6E0222A769C72008EF69B /* Assets.xcassets */; };
 		41A6E0262A769C72008EF69B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A6E0242A769C72008EF69B /* LaunchScreen.storyboard */; };
+		41E664C32A968B190074409F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E664C22A968B190074409F /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		41A6E0222A769C72008EF69B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41A6E0252A769C72008EF69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41A6E0272A769C72008EF69B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41E664C22A968B190074409F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		41788C5F2A76B629002E130A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				41E664C22A968B190074409F /* Observable.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				41A6E01A2A769C6C008EF69B /* AppDelegate.swift in Sources */,
 				41788C6D2A76C788002E130A /* NetworkConstant.swift in Sources */,
 				41A6E01C2A769C6C008EF69B /* SceneDelegate.swift in Sources */,
+				41E664C32A968B190074409F /* Observable.swift in Sources */,
 				41788C642A76B914002E130A /* AddSubViews+Extension.swift in Sources */,
 				41788C702A76CA84002E130A /* APICaller.swift in Sources */,
 				41788C722A76CAF3002E130A /* TrendingMoviesModel.swift in Sources */,
@@ -378,6 +382,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,6 +410,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
