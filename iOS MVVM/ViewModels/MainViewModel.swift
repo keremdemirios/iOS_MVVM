@@ -1,4 +1,4 @@
-//
+// TO DO : 4. veya 3. videoda kaldin.
 //  File.swift
 //  iOS MVVM
 //
