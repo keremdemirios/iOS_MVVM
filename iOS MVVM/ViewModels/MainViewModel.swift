@@ -17,7 +17,7 @@ class MainViewModel {
     }
     
     func numberOfRows(in section: Int) -> Int {
-        10
+        5
     }
     
     func getData(){
@@ -28,7 +28,7 @@ class MainViewModel {
         isLoading.value = true
         
         APICaller.getTrendingMovies { [weak self] result in
-            self?.isLoading.value = false
+//            self?.isLoading.value = false
             
             switch result {
             case .success(let data):

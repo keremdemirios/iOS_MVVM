@@ -18,6 +18,13 @@ class MainViewController: UIViewController {
         return tableView
     }()
     
+    private let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }()
+    
     // MARK : View Model
     var viewModel: MainViewModel = MainViewModel()
     
@@ -25,16 +32,43 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
-    }
-    
-    private func configure(){
-        view.backgroundColor = .systemBackground
-        navigationItem.title = "Main"
-        setupTableView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel.getData()
+    }
+    
+    private func configure(){
+        view.backgroundColor = .red
+        navigationItem.title = "Main"
+        setupTableView()
+        setupUI()
+        bindViewModel() // hata olursa ve bulamazsan buraya bak. Siralamalarda problem olabilir.
+    }
+    
+    private func setupUI(){
+        view.addSubViews(activityIndicator)
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    private func bindViewModel(){
+        viewModel.isLoading.bind {[weak self] isLoading in
+            guard let self = self, let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self.activityIndicator.startAnimating()
+                } else {
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+        }
     }
 }
 
