@@ -13,6 +13,8 @@
 		41788C6D2A76C788002E130A /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41788C6C2A76C788002E130A /* NetworkConstant.swift */; };
 		41788C702A76CA84002E130A /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41788C6F2A76CA84002E130A /* APICaller.swift */; };
 		41788C722A76CAF3002E130A /* TrendingMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41788C712A76CAF3002E130A /* TrendingMoviesModel.swift */; };
+		41A6B7C42A9A3DBA002C1F1D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B7C32A9A3DBA002C1F1D /* MainTableViewCell.swift */; };
+		41A6B7C62A9A4400002C1F1D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6B7C52A9A4400002C1F1D /* UIView+Extensions.swift */; };
 		41A6E01A2A769C6C008EF69B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6E0192A769C6C008EF69B /* AppDelegate.swift */; };
 		41A6E01C2A769C6C008EF69B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6E01B2A769C6C008EF69B /* SceneDelegate.swift */; };
 		41A6E01E2A769C6C008EF69B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A6E01D2A769C6C008EF69B /* MainViewController.swift */; };
@@ -28,6 +30,8 @@
 		41788C6C2A76C788002E130A /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		41788C6F2A76CA84002E130A /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		41788C712A76CAF3002E130A /* TrendingMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesModel.swift; sourceTree = "<group>"; };
+		41A6B7C32A9A3DBA002C1F1D /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		41A6B7C52A9A4400002C1F1D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		41A6E0162A769C6C008EF69B /* iOS MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A6E0192A769C6C008EF69B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A6E01B2A769C6C008EF69B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 		41788C5B2A76B61A002E130A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				41A6B7C32A9A3DBA002C1F1D /* MainTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				41788C632A76B914002E130A /* AddSubViews+Extension.swift */,
+				41A6B7C52A9A4400002C1F1D /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,6 +131,13 @@
 			path = MainViewControllers;
 			sourceTree = "<group>";
 		};
+		41A6B7C22A9A3D7C002C1F1D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		41A6E00D2A769C6B008EF69B = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 		41A6E0182A769C6C008EF69B /* iOS MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				41A6B7C22A9A3D7C002C1F1D /* New Group */,
 				41788C622A76B638002E130A /* Networking */,
 				41788C612A76B631002E130A /* Extensions */,
 				41788C602A76B62F002E130A /* Resources */,
@@ -227,11 +241,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A6B7C42A9A3DBA002C1F1D /* MainTableViewCell.swift in Sources */,
 				41A6E01E2A769C6C008EF69B /* MainViewController.swift in Sources */,
 				41788C6B2A76BE91002E130A /* MainViewModel.swift in Sources */,
 				41788C692A76BCA7002E130A /* MainViewController+TableView.swift in Sources */,
 				41A6E01A2A769C6C008EF69B /* AppDelegate.swift in Sources */,
 				41788C6D2A76C788002E130A /* NetworkConstant.swift in Sources */,
+				41A6B7C62A9A4400002C1F1D /* UIView+Extensions.swift in Sources */,
 				41A6E01C2A769C6C008EF69B /* SceneDelegate.swift in Sources */,
 				41E664C32A968B190074409F /* Observable.swift in Sources */,
 				41788C642A76B914002E130A /* AddSubViews+Extension.swift in Sources */,

@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-    static let cellIdentifier = "MainTableViewCellIdentifier"
     
     func setupTableView(){
         self.tableView.delegate = self
@@ -46,7 +45,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainViewController.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellIdentifier, for: indexPath)
         let movieData = cellDataSource[indexPath.row]
         cell.textLabel?.text = viewModel.getMovieTitle(movieData)
         return cell

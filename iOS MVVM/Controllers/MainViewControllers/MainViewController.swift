@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     public let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: MainViewController.cellIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: MainTableViewCell.cellIdentifier)
         return tableView
     }()
     
