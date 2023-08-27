@@ -44,7 +44,15 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainMovieTableViewCell.cellIdentifier, for: indexPath) as! MainMovieTableViewCell
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainMovieTableViewCell.cellIdentifier, for: indexPath) as? MainMovieTableViewCell else {
+//        let cellViewModel = cellDataSource[indexPath.row]
+//        cell.selectionStyle = .none
+//        cell.setupCell(viewModel: cellViewModel)
+//        return cell
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainMovieTableViewCell.cellIdentifier, for: indexPath) as? MainMovieTableViewCell else {
+            fatalError("There is a problem at cellForRowAt.")
+        }
         let cellViewModel = cellDataSource[indexPath.row]
         cell.selectionStyle = .none
         cell.setupCell(viewModel: cellViewModel)

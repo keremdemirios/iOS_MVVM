@@ -19,8 +19,11 @@ class MovieTableCellViewModel {
         self.id = movie.id
         self.title = movie.title ?? movie.name ?? "Empty"
         self.date = movie.releaseDate ?? movie.firstAirDate ?? "Empty"
-        self.rating = "\(movie.voteAverage)/10"
-        self.imageUrl = makeImageURL(movie.posterPath)
+        self.rating = "\(String(format: "%.1f", movie.voteAverage))/10"
+        self.imageUrl = makeImageURL(movie.posterPath ?? "Problem") // Example ->    /8173128371823.jpg
+        
+        print("Image Server Adress : \(NetworkConstant.shared.imageServerAdress)")
+        print("Poster Path : \(movie.posterPath)")
     }
     
     private func makeImageURL( _ imageCode: String) -> URL? {

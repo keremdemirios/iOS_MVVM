@@ -22,7 +22,7 @@ class MainMovieTableViewCell: UITableViewCell {
     private let movieImageView: UIImageView = {
         let movieImageView = UIImageView()
         movieImageView.translatesAutoresizingMaskIntoConstraints = false
-        movieImageView.sizeToFit()
+        movieImageView.contentMode = .scaleAspectFit
         return movieImageView
     }()
     
@@ -56,7 +56,6 @@ class MainMovieTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        print("class aktif")
         configure()
     }
     
@@ -83,23 +82,25 @@ class MainMovieTableViewCell: UITableViewCell {
         ])
         // round for image view
         movieImageView.round(5)
+        movieImageView.addBorder(color: .red, width: 1)
         moviesContentView.addSubViews(movieImageView, nameTitle, dateTitle, rateTitle)
         NSLayoutConstraint.activate([
             // movie image view constraints
             movieImageView.topAnchor.constraint(equalTo: moviesContentView.topAnchor, constant: 5),
             movieImageView.bottomAnchor.constraint(equalTo: moviesContentView.bottomAnchor, constant: -5),
-            movieImageView.leadingAnchor.constraint(equalTo: moviesContentView.leadingAnchor, constant: 8),
+            movieImageView.leadingAnchor.constraint(equalTo: moviesContentView.leadingAnchor, constant: 16),
+            movieImageView.widthAnchor.constraint(equalToConstant: 100),
             // name constraints
             nameTitle.topAnchor.constraint(equalTo: moviesContentView.topAnchor, constant: 5),
-            nameTitle.leadingAnchor.constraint(equalTo: movieImageView.leadingAnchor, constant: 7.5),
+            nameTitle.leadingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: 7.5),
             nameTitle.trailingAnchor.constraint(equalTo: moviesContentView.trailingAnchor, constant: -7.5),
             // date constraints
             dateTitle.bottomAnchor.constraint(equalTo: moviesContentView.bottomAnchor, constant: -30),
-            dateTitle.leadingAnchor.constraint(equalTo: movieImageView.leadingAnchor, constant: 7.5),
+            dateTitle.leadingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: 7.5),
             dateTitle.trailingAnchor.constraint(equalTo: moviesContentView.trailingAnchor, constant: -7.5),
             // rate constraints
             rateTitle.bottomAnchor.constraint(equalTo: moviesContentView.bottomAnchor, constant: -5),
-            rateTitle.leadingAnchor.constraint(equalTo: movieImageView.leadingAnchor, constant: 7.5),
+            rateTitle.leadingAnchor.constraint(equalTo: movieImageView.trailingAnchor, constant: 7.5),
             rateTitle.trailingAnchor.constraint(equalTo: moviesContentView.trailingAnchor, constant: -7.5)
         ])
     }
