@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     public let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: MainTableViewCell.cellIdentifier)
+        tableView.register(MainMovieTableViewCell.self, forCellReuseIdentifier: MainMovieTableViewCell.cellIdentifier)
         return tableView
     }()
     
@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
     var viewModel: MainViewModel = MainViewModel()
     
     // MARK : Variables
-    var cellDataSource: [Movie] = []
+    var cellDataSource: [MovieTableCellViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
     }
     
     private func configure(){
-        view.backgroundColor = .red
+        view.backgroundColor = .systemBackground
         navigationItem.title = "Main"
         setupTableView()
         setupUI()

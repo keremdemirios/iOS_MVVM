@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import SDWebImage
 
-class MainTableViewCell: UITableViewCell {
-    static let cellIdentifier = "MainTableViewCell"
-    
+class MainMovieTableViewCell: UITableViewCell {
+    static let cellIdentifier = "MainMovieTableViewCell"
     
     private let moviesContentView: UIView = {
         let moviesContentView = UIView()
         moviesContentView.translatesAutoresizingMaskIntoConstraints = false
         moviesContentView.layer.borderColor = UIColor.label.cgColor
+        moviesContentView.backgroundColor = .lightGray
         return moviesContentView
     }()
     
@@ -53,10 +54,14 @@ class MainTableViewCell: UITableViewCell {
         return rateTitle
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        print("class aktif")
         configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func configure(){
@@ -99,5 +104,10 @@ class MainTableViewCell: UITableViewCell {
         ])
     }
     
-//    func setupCell(viewModel: MovieTableCellViewModel){}
+    func setupCell(viewModel: MovieTableCellViewModel) {
+        nameTitle.text = viewModel.title
+        dateTitle.text = viewModel.date
+        rateTitle.text = viewModel.rating
+        movieImageView.sd_setImage(with: viewModel.imageUrl)
+    }
 }

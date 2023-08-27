@@ -13,7 +13,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func setupTableView(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.backgroundColor = .clear
         
         configureUITableView()
     }
@@ -24,8 +23,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
@@ -45,10 +44,16 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellIdentifier, for: indexPath)
-        let movieData = cellDataSource[indexPath.row]
-        cell.textLabel?.text = viewModel.getMovieTitle(movieData)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainMovieTableViewCell.cellIdentifier, for: indexPath) as! MainMovieTableViewCell
+        let cellViewModel = cellDataSource[indexPath.row]
+        cell.selectionStyle = .none
+        cell.setupCell(viewModel: cellViewModel)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
 }
 
