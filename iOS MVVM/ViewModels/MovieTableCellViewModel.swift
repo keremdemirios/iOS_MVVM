@@ -26,7 +26,7 @@ class MovieTableCellViewModel {
         print("Poster Path : \(movie.posterPath)")
     }
     
-    private func makeImageURL( _ imageCode: String) -> URL? {
+    func makeImageURL( _ imageCode: String) -> URL? {
         URL(string: "\(NetworkConstant.shared.imageServerAdress)\(imageCode)")
     }
 }

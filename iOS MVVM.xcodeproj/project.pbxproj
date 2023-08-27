@@ -144,13 +144,6 @@
 			path = MainViewControllers;
 			sourceTree = "<group>";
 		};
-		41A6B7C22A9A3D7C002C1F1D /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		41A6B7CE2A9BA84C002C1F1D /* DetailsMovieViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +171,6 @@
 		41A6E0182A769C6C008EF69B /* iOS MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				41A6B7C22A9A3D7C002C1F1D /* New Group */,
 				41788C622A76B638002E130A /* Networking */,
 				41788C612A76B631002E130A /* Extensions */,
 				41788C602A76B62F002E130A /* Resources */,
